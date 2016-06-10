@@ -45,11 +45,12 @@
                 {
                     url: 'api/products/' + id
                 })
-            .done(function(data)
-            {
-
+            .done(function (data) {
+                $('#product').text(formatItem(data));
             })
-            .fail()
+            .fail(function (jqXHR, textStatus, err) {
+                $('#product').text(err);
+            });
         }
 
     </script>
